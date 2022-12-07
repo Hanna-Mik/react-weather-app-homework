@@ -40,7 +40,7 @@ export default function App() {
     <form onSubmit={handleSubmit}>
       {" "}
       <div className="row m-3">
-        <div className="col-8">
+        <div className="col-6 col-lg-8">
           <input
             type="search"
             className="form-control"
@@ -49,13 +49,13 @@ export default function App() {
             onChange={searchCity}
           />
         </div>
-        <div className="col-2 ">
-          <button type="submit" className="btn btn-primary px-4">
+        <div className="col-3 col-lg-2">
+          <button type="submit" className="btn btn-primary  px-lg-4">
             Search
           </button>
         </div>
-        <div className="col-2">
-          <button className="btn btn-success px-4">Current</button>
+        <div className="col-3 col-lg-2">
+          <button className="btn btn-success  px-lg-4">Current</button>
         </div>
       </div>
     </form>
