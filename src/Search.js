@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -34,18 +33,31 @@ export default function App() {
   }
   let form = (
     <form onSubmit={handleSubmit}>
-      <input
-        type="search"
-        placeholder="Enter a city.."
-        autoFocus
-        onChange={searchCity}
-      />
-      <button type="Submit">Search</button>
+      {" "}
+      <div className="row m-3">
+        <div className="col-6">
+          <input
+            type="search"
+            className="form-control"
+            placeholder="Enter a city.."
+            autoFocus
+            onChange={searchCity}
+          />
+        </div>
+        <div className="col-3 ">
+          <button type="submit" className="btn btn-primary px-4">
+            Search
+          </button>
+        </div>
+        <div className="col-3">
+          <button className="btn btn-success px-4">Search</button>
+        </div>
+      </div>
     </form>
   );
   if (loaded) {
     return (
-      <div className="App">
+      <div className="Search">
         <h1>Weather App</h1>
         {form}
         <ul>
@@ -61,7 +73,7 @@ export default function App() {
     );
   } else {
     return (
-      <div className="App">
+      <div className="Search">
         <h1>Weather App</h1>
         {form}
       </div>
