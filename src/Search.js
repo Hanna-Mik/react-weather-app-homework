@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Weather from "./Weather";
 import axios from "axios";
 
 export default function App() {
@@ -35,7 +36,7 @@ export default function App() {
     <form onSubmit={handleSubmit}>
       {" "}
       <div className="row m-3">
-        <div className="col-6">
+        <div className="col-8">
           <input
             type="search"
             className="form-control"
@@ -44,12 +45,12 @@ export default function App() {
             onChange={searchCity}
           />
         </div>
-        <div className="col-3 ">
+        <div className="col-2 ">
           <button type="submit" className="btn btn-primary px-4">
             Search
           </button>
         </div>
-        <div className="col-3">
+        <div className="col-2">
           <button className="btn btn-success px-4">Search</button>
         </div>
       </div>
@@ -60,15 +61,14 @@ export default function App() {
       <div className="Search">
         <h1>Weather App</h1>
         {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {Math.round(weather.wind)} km/h</li>
-          <li>{weather.description}</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
+        <Weather
+          temperature={Math.round(weather.temperature)}
+          humidity={weather.humidity}
+          wind={Math.round(weather.wind)}
+          weatherDescription={weather.description}
+          imageSrc={weather.icon}
+          imageAlt={weather.description}
+        />
       </div>
     );
   } else {
