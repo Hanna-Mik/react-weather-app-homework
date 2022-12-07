@@ -1,11 +1,11 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  text-transform: capitalize;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   padding: 20px;
   margin-top: 100px;
+  max-width: 50%;
 }
 .App ul {
   list-style: none;

@@ -6,7 +6,7 @@ export default function Weather(props) {
     <div className="Weather row mt-4">
       <div className="col-12">
         <ul>
-          <li></li>
+          <li>{props.city}</li>
           <li></li>
         </ul>
       </div>
@@ -17,9 +17,13 @@ export default function Weather(props) {
       <div className="col-6">
         {" "}
         <ul>
-          <li>{props.weatherDescription}</li>
+          <li>
+            <strong>{props.weatherDescription}</strong>
+          </li>
+          <li>Feels like {props.feelsLike}°C</li>
           <li>Humidity: {props.humidity}%</li>
-          <li>Wind: {props.wind} km/h</li>
+          <li>Pressure: {props.pressure}hPa</li>
+          <li>Wind: {props.wind}m/s</li>
         </ul>
       </div>
     </div>

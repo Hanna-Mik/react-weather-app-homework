@@ -10,10 +10,13 @@ export default function App() {
   function showWeather(response) {
     setLoaded(true);
     setWeather({
+      city: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
+      feelsLike: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      pressure: response.data.main.pressure,
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
@@ -51,7 +54,7 @@ export default function App() {
           </button>
         </div>
         <div className="col-2">
-          <button className="btn btn-success px-4">Search</button>
+          <button className="btn btn-success px-4">Current</button>
         </div>
       </div>
     </form>
@@ -62,7 +65,10 @@ export default function App() {
         <h1>Weather App</h1>
         {form}
         <Weather
+          city={weather.city}
           temperature={Math.round(weather.temperature)}
+          feelsLike={Math.round(weather.feelsLike)}
+          pressure={weather.pressure}
           humidity={weather.humidity}
           wind={Math.round(weather.wind)}
           weatherDescription={weather.description}
