@@ -11,6 +11,7 @@ export default function App() {
     setLoaded(true);
     setWeather({
       city: response.data.name,
+      date: response.data.dt,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       feelsLike: response.data.main.feels_like,
@@ -66,6 +67,7 @@ export default function App() {
         {form}
         <Weather
           city={weather.city}
+          date={weather.date}
           temperature={Math.round(weather.temperature)}
           feelsLike={Math.round(weather.feelsLike)}
           pressure={weather.pressure}

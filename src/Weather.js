@@ -1,19 +1,29 @@
 import React from "react";
 
 export default function Weather(props) {
-  console.log(props.weatherDescription);
+  function showTime() {
+    let date = new Date(props.date * 1000);
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+    return `${hours}:${minutes}`;
+  }
   return (
     <div className="Weather row mt-4">
-      <div className="col-12">
-        <ul>
-          <li>{props.city}</li>
-          <li></li>
-        </ul>
-      </div>
+      <div className="col-12 cityName">{props.city}</div>
+      <div className="col-12 mb-4">Last updated: {showTime()}</div>
       <div className="col-3">
         <img src={props.imageSrc} alt={props.weatherDescription} />
       </div>
-      <div className="col-3">{props.temperature}°C</div>
+      <div className="col-3 temperature">
+        {props.temperature}
+        <span className="units">°C</span>{" "}
+      </div>
       <div className="col-6">
         {" "}
         <ul>
