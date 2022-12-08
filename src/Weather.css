@@ -1,0 +1,25 @@
+.Weather ul {
+  list-style: none;
+  opacity: 0.8;
+}
+.Weather .temperature {
+  font-size: 4rem;
+  text-align: start;
+}
+.Weather .temperature .units {
+  font-size: 2rem;
+  position: relative;
+  top: -1.3rem;
+}
+.Weather .cityName {
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .Weather ul {
+    padding-left: 0%;
+  }
+  .Weather .temperature {
+    font-size: 4rem;
+    text-align: center;
+  }
+}

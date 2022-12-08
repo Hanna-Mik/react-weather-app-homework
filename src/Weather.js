@@ -1,4 +1,5 @@
 import React from "react";
+import "./Weather.css";
 
 export default function Weather(props) {
   function showTime() {
@@ -17,10 +18,10 @@ export default function Weather(props) {
     <div className="Weather row mt-4">
       <div className="col-12 cityName">{props.city}</div>
       <div className="col-12 mb-4">Last updated: {showTime()}</div>
-      <div className="col-6 col-lg-3">
+      <div className="col-12 col-lg-3">
         <img src={props.imageSrc} alt={props.weatherDescription} />
       </div>
-      <div className="col-6 col-lg-3 temperature">
+      <div className="col-12 col-lg-3 temperature">
         {props.temperature}
         <span className="units">°C</span>{" "}
       </div>
