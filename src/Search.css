@@ -1,0 +1,8 @@
+.Search .searchButton {
+  background: transparent;
+  border: none;
+  color: white;
+}
+.Search .fa-solid {
+  font-size: 2rem;
+}

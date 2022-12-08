@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import "./Search.css";
 import Weather from "./Weather";
 import axios from "axios";
 
-export default function App() {
+export default function Search() {
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
@@ -37,10 +38,10 @@ export default function App() {
     setCity(event.target.value);
   }
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="Search">
       {" "}
       <div className="row m-3">
-        <div className="col-6 col-lg-8">
+        <div className="col-8">
           <input
             type="search"
             className="form-control"
@@ -49,13 +50,13 @@ export default function App() {
             onChange={searchCity}
           />
         </div>
-        <div className="col-3 col-lg-2">
-          <button type="submit" className="btn btn-primary  px-lg-4">
-            Search
+        <div className="col-2">
+          <button type="submit" className="searchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
-        <div className="col-3 col-lg-2">
-          <button className="btn btn-success  px-lg-4">Current</button>
+        <div className="col-2">
+          <i class="fa-solid fa-location-dot"></i>
         </div>
       </div>
     </form>
